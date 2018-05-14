@@ -14,44 +14,13 @@ class Navbar extends Component {
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
-    // const authLinks = (
-    //   <ul className="navbar-nav ml-auto">
-    //     <li className="nav-item">
-    //       <a
-    //         href=""
-    //         onClick={this.onLogoutClick.bind(this)}
-    //         className="nav-link"
-    //       >
-    //         <img
-    //           className="rounded-circle"
-    //           src={user.avatar}
-    //           alt={user.name}
-    //           title="You must have a Gravatar account"
-    //           style={{ width: "25px", marginRight: "5px" }}
-    //         />{" "}
-    //         Logout
-    //       </a>
-    //     </li>
-    //   </ul>
-    // );
-
-    // const guestLinks = (
-    //   <ul className="navbar-nav ml-auto">
-    //     <li className="nav-item">
-    //       <Link to="/register" className="nav-link">
-    //         Sign Up
-    //       </Link>
-    //     </li>
-    //     <li className="nav-item">
-    //       <Link to="/login" className="nav-link">
-    //         Login
-    //       </Link>
-    //     </li>
-    //   </ul>
-    // );
-
     const authLinks = (
       <ul className="navbar-nav ml-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/dashboard">
+            Dashboard
+          </Link>
+        </li>
         <li className="nav-item">
           <a
             href=""
