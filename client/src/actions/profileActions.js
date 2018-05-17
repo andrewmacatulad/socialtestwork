@@ -2,6 +2,7 @@ import axios from "axios";
 
 import {
   GET_PROFILE,
+  GET_PROFILES,
   PROFILE_LOADING,
   SET_CURRENT_USER,
   CLEAR_CURRENT_PROFILE,
@@ -123,6 +124,25 @@ export const deleteEducation = id => dispatch => {
         })
       );
   }
+};
+
+// Get All profiles
+export const getProfiles = () => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get(`/api/profile/all`)
+    .then(profiles =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: profiles.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: null
+      })
+    );
 };
 
 export const setProfileLoading = () => {
